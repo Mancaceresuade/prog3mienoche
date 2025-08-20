@@ -18,13 +18,15 @@ public class App2 {
             return false; // si alguna columna no tiene múltiplo → false
         }
         return todasLasColumnasConMultipoDeRec(matriz, numero, columna + 1);
-    }
+    } // metodo sustraccion
+    // a=1  b=1 k=1   , O(n^(1+1)) => O(n^2)
 
     // Revisa si una columna tiene al menos un múltiplo
     private static boolean columnaConMultipoDeRec(int[][] matriz, int numero, int fila, int columna) {
         if (fila < 0) return false; // no encontró múltiplo en esa columna
         if (matriz[fila][columna] % numero == 0) return true; // encontró múltiplo
         return columnaConMultipoDeRec(matriz, numero, fila - 1, columna);
-    }    
+    }  // metodo ? sustraccion, a = 1, b = 1, k=0
+    // segundo caso a=1 , O(n^(0+1))  => O(n)
 
 }
