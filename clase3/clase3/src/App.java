@@ -5,6 +5,7 @@ public class App {
         todasLasColumnasConUnMultiploDe(matriz,4); // true
         int[][] matriz2 = {{3,4,1},{12,1,3},{1,6,9}};
         todasLasColumnasConUnMultiploDe(matriz,4); // false
+        
     }
     private static boolean todasLasColumnasConUnMultiploDe(int[][] matriz, int elemento) {
         boolean rta = true; // 1

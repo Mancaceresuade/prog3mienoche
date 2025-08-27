@@ -8,8 +8,8 @@ public class App2 {
     }
 
     private static boolean todasLasColumnasConUnMultiploDe(int[][] matriz, int numero) {
-        return todasLasColumnasConMultipoDeRec(matriz, numero, 0);
-    }
+        return todasLasColumnasConMultipoDeRec(matriz, numero, 0); //
+    } // O(n^2)
 
     // Revisa cada columna de la matriz
     private static boolean todasLasColumnasConMultipoDeRec(int[][] matriz, int numero, int columna) {
