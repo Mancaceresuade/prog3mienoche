@@ -8,14 +8,14 @@ public class Moneda {
         int[] monedas = {1, 2, 5 };
         int montoTotal = 6;
         ArrayList<Integer> comb_actual = new ArrayList<>();
-        montoTotalConMenorCantidadMonedas(monedas, montoTotal, 0, comb_actual);
+        montoTotalConMenorCantidadMonedas(monedas, montoTotal, 0, comb_actual,0);
         
         System.out.println("Mejor combinación: " + resultado);
         System.out.println("Cantidad mínima de monedas: " + mejor);
     }
 
     private static void montoTotalConMenorCantidadMonedas(int[] monedas, int montoTotal, int monto_actual,
-                                                          ArrayList<Integer> comb_actual) {
+                                                          ArrayList<Integer> comb_actual, int index) {
         // Caso base: exacto
         if (monto_actual == montoTotal) {
             if (comb_actual.size() < mejor) {
@@ -29,9 +29,9 @@ public class Moneda {
         if (monto_actual > montoTotal || comb_actual.size() >= mejor) return;
 
         // Branch: probar todas las monedas
-        for (int j = 0; j < monedas.length; j++) {
+        for (int j = index; j < monedas.length; j++) {
             comb_actual.add(monedas[j]);
-            montoTotalConMenorCantidadMonedas(monedas, montoTotal, monto_actual + monedas[j], comb_actual);
+            montoTotalConMenorCantidadMonedas(monedas, montoTotal, monto_actual + monedas[j], comb_actual,j+1);
             comb_actual.remove(comb_actual.size() - 1); // backtracking
         }
     }
